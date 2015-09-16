@@ -5,8 +5,6 @@ function W=Treina(Xt,d,NN)
  
 //Criando rede inicial 
 W = ann_FF_init(NN); 
-//disp(W); 
- 
  
 //===============Treinando a rede=========== 
 //Taxa de aprendizagem e limiar do erro 
