@@ -25,6 +25,9 @@ for i=1:l
         Errors=Errors+1;
     end
 end
+disp('Successes: '+string(Success))
+disp('Erros: '+string(Errors))
+disp('Total:'+string(l));
 Success=Success/l;
 Errors=Errors/l;
 endfunction
