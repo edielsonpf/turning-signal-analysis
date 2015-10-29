@@ -40,7 +40,7 @@ end
 if Debug == 1 then
     disp(size(pcaY));
     disp(size(scoreY));
-    //disp(cumsum(latentY)./sum(latentY));
+    disp(cumsum(latentY)./sum(latentY));
     disp(scoreY(:,1:4));
     //disp(pcaY);
     //svwrite('pca.txt',scoreY(:,1));
