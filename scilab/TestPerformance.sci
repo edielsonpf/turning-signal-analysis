@@ -1,4 +1,4 @@
-function [Success,Errors] = TestPerformance(Xr,Xd)
+function [Success,Errors,Accuracy] = TestPerformance(Xr,Xd)
 //Xr: Vector with the values to be compared
 //Xd: vetor wit the reference values
 
@@ -25,6 +25,9 @@ for i=1:l
         Errors=Errors+1;
     end
 end
-Success=Success/l;
-Errors=Errors/l;
+Accuracy=Success/l;
+disp('Success: '+string(Success))
+disp('Error: '+string(Errors))
+disp('Total:'+string(l));
+disp('Accuracy:'+string(Accuracy*100));
 endfunction
