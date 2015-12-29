@@ -62,7 +62,7 @@ load ('m2.mat','m2');
 plot(Ry,PC1,'b.','MarkerSize',8)
 
 
-X=[PC1,Ry];
+X=[Ra, MRR, f];
 
 NumCluster=3;
 if NumCluster == 2 then
@@ -71,21 +71,21 @@ else
     [model,idx] = nan_kmeans( X, 3 );    
 end
 
-figure;
-plot(X(idx==1,1),X(idx==1,2),'r.','MarkerSize',8)
-plot(X(idx==2,1),X(idx==2,2),'b.','MarkerSize',8)
-if NumCluster == 3 then
-    plot(X(idx==3,1),X(idx==3,2),'g.','MarkerSize',8)
-end
-ctrs=model.X;
-plot(ctrs(:,1),ctrs(:,2),'ko', 'MarkerSize',8,'LineWidth',2)
-plot(ctrs(:,1),ctrs(:,2),'kx', 'MarkerSize',8,'LineWidth',2);
-if NumCluster == 2 then
-    legend('Cluster 1','Cluster 2','Centroids',  'Location','NW')
-else
-    plot(ctrs(:,1),ctrs(:,2),'k*', 'MarkerSize',8,'LineWidth',2);
-    legend('Cluster 1','Cluster 2','Cluster 3','Centroids',  'Location','NW')
-end
+//figure;
+//plot(X(idx==1,1),X(idx==1,2),'r.','MarkerSize',8)
+//plot(X(idx==2,1),X(idx==2,2),'b.','MarkerSize',8)
+//if NumCluster == 3 then
+//    plot(X(idx==3,1),X(idx==3,2),'g.','MarkerSize',8)
+//end
+//ctrs=model.X;
+//plot(ctrs(:,1),ctrs(:,2),'ko', 'MarkerSize',8,'LineWidth',2)
+//plot(ctrs(:,1),ctrs(:,2),'kx', 'MarkerSize',8,'LineWidth',2);
+//if NumCluster == 2 then
+//    legend('Cluster 1','Cluster 2','Centroids',  'Location','NW')
+//else
+//    plot(ctrs(:,1),ctrs(:,2),'k*', 'MarkerSize',8,'LineWidth',2);
+//    legend('Cluster 1','Cluster 2','Cluster 3','Centroids',  'Location','NW')
+//end
 
 cluster1 = setups(idx == 1,:);
 disp('Cluster 1');

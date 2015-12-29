@@ -11,7 +11,7 @@ W = ann_FF_init(NN);
 lp = [0.01, 1e-4]; 
  
 //Maximo numero de épocas 
-epochs = 3000; 
+epochs = 1000; 
  
 //treinando 
 W = ann_FF_Std_batch(Xt,d,NeuralNetwork,W,lp,epochs); 
