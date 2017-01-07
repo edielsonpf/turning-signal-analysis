@@ -4,7 +4,7 @@ clear;
 xdel(winsid());
 
 Debug = 1;
-SPEC_DATA_FOLDER = 'C:\Users\Edielson\Documents\Researches\turning-signal-analysis\results\spectrogram\';
+SPEC_DATA_FOLDER = 'C:\Users\Edielson\Projects\Research\turning-signal-analysis\results\spectrogram\';
 
 //===========================================================
 Ms=[];
@@ -34,9 +34,9 @@ disp(size(Ms));
 end
 
 //covariance
-//[pcaY,scoreY,latentY,tsquareY]=princomp(X1);
+[pcaY,scoreY,latentY,tsquareY]=princomp(Ms);
 //correlation
-[pcaY,scoreY,latentY,tsquareY]=princomp(nan_zscore(Ms));
+//[pcaY,scoreY,latentY,tsquareY]=princomp(nan_zscore(Ms));
 if Debug == 1 then
     disp(size(pcaY));
     disp(size(scoreY));

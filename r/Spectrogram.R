@@ -1,12 +1,12 @@
 library (phonTools)
 #data (sound)                 ## use the example 'sound' object provided
-sound = loadsound('C:/Users/Edielson/Documents/Researches/turning-signal-analysis/data/selected/vc_200_f_010_ap_010-1.wav')
+sound = loadsound('C:/Users/Edielson/Projects/Research/turning-signal-analysis/data/raw/vc_200_f_010_ap_010-1.wav')
 #par (mfrow = c(3,1), mar = c(4,4,1,1))
 spectrogram (sound,maxfreq = 22050)
 axis(1,cex=10)
 axis(2,cex=10)
-title(xlab= "Time (ms)", cex=15)
-title(ylab= "Frequency (Hz)", cex=15)
+title(xlab= "Tempo (ms)", cex=15)
+title(ylab= "Frequencia (Hz)", cex=15)
 
 sound = loadsound('C:/Users/Edielson/Documents/Researches/turning-signal-analysis/data/selected/vc_240_f_010_ap_010-1.wav')
 spectrogram (sound,maxfreq = 22050)

@@ -4,13 +4,13 @@ clear;
 xdel(winsid());
 
 Debug = 1;
-SPEC_DATA_FOLDER = 'C:\Users\Edielson\Documents\Researches\turning-signal-analysis\results\spectrogram\';
+SPEC_DATA_FOLDER = 'C:\Users\Edielson\Projects\Research\turning-signal-analysis\results\spectrogram\';
 
 //===========================================================
 Ms=[];
 MsIndex=1;
 FileIndex=1;
-fid1 = mopen('file_list.txt','rt');
+fid1 = mopen('file_list2.txt','rt');
 while  ~meof(fid1) do
 	FileAux = mgetl(fid1,1);
     disp(FileAux);
@@ -34,9 +34,10 @@ disp(size(Ms));
 end
 
 //covariance
-//[pcaY,scoreY,latentY,tsquareY]=princomp(X1);
+//[pcaY,scoreY,latentY,tsquareY]=princomp(Ms);
 //correlation
-[pcaY,scoreY,latentY,tsquareY]=princomp(nan_zscore(Ms));
+//[pcaY,scoreY,latentY,tsquareY]=princomp(nan_zscore(Ms));
+[pcaY,scoreY,latentY,tsquareY]=princomp(wcenter(Ms));
 if Debug == 1 then
     disp(size(pcaY));
     disp(size(scoreY));
@@ -50,6 +51,7 @@ end
 PC1=scoreY(:,1);
 PC2=scoreY(:,2);
 PC3=scoreY(:,3);
+disp(PC1)
 //=======================================================================
 load ('MRR.mat','MRR');
 load ('ry.mat','Ry');
@@ -62,7 +64,7 @@ load ('m2.mat','m2');
 plot(Ry,PC1,'b.','MarkerSize',8)
 
 
-X=[Ra, MRR, f];
+X=[Ry, PC1];
 
 NumCluster=3;
 if NumCluster == 2 then
